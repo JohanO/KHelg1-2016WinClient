@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{D3BB7237-A903-4491-B093-4BFBC9936770}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KHelgMusic</RootNamespace>
+    <AssemblyName>KHelgMusic</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>KHelgMusic_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="KHelgMusic_TemporaryKey.pfx" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\MusicCollection.cs" />
+    <Compile Include="Models\Song.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PlayerService.cs" />
+    <Compile Include="Services\SettingsServices\ISettingsService.cs" />
+    <Compile Include="Services\SettingsServices\SettingsService.cs" />
+    <Compile Include="ViewModels\AlbumViewModel.cs" />
+    <Compile Include="ViewModels\CollectionPageViewModel.cs" />
+    <Compile Include="ViewModels\CollectionViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\DetailPageViewModel.cs" />
+    <Compile Include="ViewModels\PlayerViewModel.cs" />
+    <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="ViewModels\SongViewModel.cs" />
+    <Compile Include="Views\Busy.xaml.cs">
+      <DependentUpon>Busy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CollectionPage.xaml.cs">
+      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailPage.xaml.cs">
+      <DependentUpon>DetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerControl.xaml.cs">
+      <DependentUpon>PlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\01 Apple.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\02 Beef Jerkey.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\03 Sugar Water.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\04 White Pepper Ice Cream.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\05 Birthday Cake.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\06 Know Your Chicken.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\08 The Candy Man.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\09 Le Pain Perdu.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\10 Artichoke.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\11 Jive %28Hidden Track %29.mp3" />
+    <Content Include="Data\Cibo Matto [1996] - Viva! La Woman\Cover.jpg" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\01 David Bowie - Five Years.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\02 David Bowie - Soul Love.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\03 David Bowie - Moonage Daydream.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\04 David Bowie - Starman.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\05 David Bowie - It Ain%27t Easy.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\06 David Bowie - Lady Stardust.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\07 David Bowie - Star.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\08 David Bowie - Hang On To Yourself.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\09 David Bowie - Ziggy Stardust.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\10 David Bowie - Suffragette City.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\11 David Bowie - Rock %27N%27 Roll Suicide.mp3" />
+    <Content Include="Data\David Bowie [1972] - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars\Cover.jpg" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\01 Fresh %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\02 What We Do %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\03 Please Baby Please %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\04 Don%27t Shoot %28I%27m A Man%29 %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\05 Mind Games %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\06 Human Rocket %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\07 Sumthin%27 %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\08 Step Up %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\09 Cameo %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\10 Later Is Now %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\11 No Place Like Home %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\12 March On %28Album Version%29.mp3" />
+    <Content Include="Data\Devo [2010] - Something For Everybody\Cover.jpg" />
+    <Content Include="Data\Fluke [1995] - Bullet CD Maxi\01 Bullet %28Bitten%29.mp3" />
+    <Content Include="Data\Fluke [1995] - Bullet CD Maxi\02 Bullet %28Percussion cap%29.mp3" />
+    <Content Include="Data\Fluke [1995] - Bullet CD Maxi\03 Bullet %28Atlast Space Odyssey%29.mp3" />
+    <Content Include="Data\Fluke [1995] - Bullet CD Maxi\04 Bullet %28Afro Funk Dust Brother.mp3" />
+    <Content Include="Data\Fluke [1995] - Bullet CD Maxi\05 Bullet %28Jazz Mix Dust Brothers.mp3" />
+    <Content Include="Data\Fluke [1995] - Bullet CD Maxi\Cover.jpg" />
+    <Content Include="Data\Genetic Drugs &amp; Jasmon [2004] - Spacecake\08 The Egyptian Delegate feat  Howard Marks %28aka Mr  Nice%29.mp3" />
+    <Content Include="Data\Genetic Drugs &amp; Jasmon [2004] - Spacecake\Cover.jpg" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\01 - Computerwelt.mp3" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\02 - Taschenrechner.mp3" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\03 - Nummern.mp3" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\04 - Computerwelt 2.mp3" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\05 - Computer Liebe.mp3" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\06 - Heimcomputer.mp3" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\07 - It%27s More Fun To Compute.mp3" />
+    <Content Include="Data\Kraftwerk [1981] - Computerwelt\Cover.jpg" />
+    <Content Include="Data\New Order [1981] - Movement\01 Dreams Never End.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\02 Truth.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\03 Senses.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\04 Chosen Time.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\05 ICB.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\06 The Him.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\07 Doubts Even Here.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\08 Denial.mp3" />
+    <Content Include="Data\New Order [1981] - Movement\Cover.jpg" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.01 Somewhat Damaged.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.02 The Day the World Went Away.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.03 The Frail.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.04 The Wretched.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.05 We%27re in This Together.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.06 The Fragile.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.07 Just Like You Imagined.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.08 Even Deeper.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.09 Pilgrimage.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.10 No, You Don%27t.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.11 La Mer.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Left.12 The Great Below.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Cover.jpg" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.01 The Way out is Through.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.02 Into the Void.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.03 Where is Everybody.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.04 The Mark Has Been Made.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.05 Please.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.06 Starfuckers, Inc..m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.07 Complication.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.08 I%27m Looking Forward to Joining You, Finally.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.09 The Big Come Down.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.10 Underneath it All.m4a" />
+    <Content Include="Data\Nine Inch Nails [1999] - The Fragile\Right.11 Ripe %28With Decay%29.m4a" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\01 Reise, Reise.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\02 Mein Teil.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\03 Dalai Lama.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\04 Keine Lust.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\05 Los.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\06 Amerika.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\07 Moskau.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\08 Morgenstern.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\09 Stein um Stein.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\10 Ohne Dich.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\11 Amour.mp3" />
+    <Content Include="Data\Rammstein [2004] - Reise Reise\Cover.jpg" />
+    <Content Include="Help.htm" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Styles\Custom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Views\Busy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
